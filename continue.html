@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Application Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f7fa;
+    color:#111;
+}
+
+/* NAVBAR */
+.navbar{
+    background:#fff;
+    border-bottom:1px solid #e5e7eb;
+}
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+nav a{
+    margin-left:18px;
+    text-decoration:none;
+    color:#0b5ed7;
+    font-weight:500;
+}
+.donate-nav{
+    border:2px solid #0b5ed7;
+    padding:6px 14px;
+    border-radius:6px;
+}
+
+/* FORM LAYOUT */
+.container{
+    max-width:900px;
+    margin:40px auto;
+    background:#fff;
+    padding:35px;
+    border-radius:12px;
+    box-shadow:0 12px 35px rgba(0,0,0,0.08);
+}
+
+h2{
+    color:#0b5ed7;
+    margin-bottom:10px;
+}
+.section-title{
+    margin-top:30px;
+    font-weight:bold;
+    color:#0b5ed7;
+}
+
+label{
+    font-size:14px;
+    font-weight:600;
+    display:block;
+    margin-top:16px;
+}
+
+input, select, textarea{
+    width:100%;
+    padding:12px;
+    margin-top:6px;
+    border-radius:6px;
+    border:1px solid #cbd5e1;
+    font-size:14px;
+}
+
+textarea{
+    min-height:140px;
+    resize:vertical;
+}
+
+.checkbox-group{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:10px;
+}
+.checkbox-group label{
+    font-weight:normal;
+}
+
+.submit-btn{
+    margin-top:30px;
+    width:100%;
+    padding:14px;
+    background:#0b5ed7;
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.note{
+    font-size:13px;
+    margin-top:12px;
+    color:#555;
+}
+footer{
+    text-align:center;
+    font-size:13px;
+    color:#6b7280;
+    margin:30px 0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="nav-container">
+        <img src="https://i.pinimg.com/1200x/e9/f3/4d/e9f34d47a8864ef7bea68975295e0894.jpg"
+             style="height:50px">
+        <nav>
+            <a href="./center.html">The Center</a>
+            <a href="programs.html">Programs</a>
+            <a href="stories.html">Stories</a>
+            <a href="about.html">About</a>
+            <a href="./donate.html" class="donate-nav">Donate</a>
+        </nav>
+    </div>
+</header>
+
+<!-- FORM -->
+<div class="container">
+<form action="https://formspree.io/f/xreezgyr" method="POST">
+
+<h2>APPLICATION FORM</h2>
+
+<!-- PERSONAL INFO -->
+<p class="section-title">Personal Information</p>
+
+<label>Full Name</label>
+<input type="text" name="full_name" required>
+
+<label>Date of Birth</label>
+<input type="date" name="dob" required>
+
+<label>Gender</label>
+<div class="checkbox-group">
+<label><input type="radio" name="gender" value="Male" required> Male</label>
+<label><input type="radio" name="gender" value="Female"> Female</label>
+</div>
+
+<label>Nationality</label>
+<select name="nationality" required>
+<option value="">Select country</option>
+<option>Switzerland</option>
+<option>United States</option>
+<option>United Kingdom</option>
+<option>Canada</option>
+<option>South Africa</option>
+<option>Other</option>
+</select>
+
+<!-- CONTACT -->
+<p class="section-title">Contact Information</p>
+
+<label>Email Address</label>
+<input type="email" name="email" required>
+
+<label>Phone Number</label>
+<input type="tel" name="phone" required>
+
+<label>Residential Address</label>
+<textarea name="address"></textarea>
+
+<!-- APPLICATION DETAILS -->
+<p class="section-title">Application Details</p>
+
+<label>Type of Application</label>
+<div class="checkbox-group">
+<label><input type="checkbox" name="application_type" value="Job"> Job Application</label>
+<label><input type="checkbox" name="application_type" value="Program"> Program Enrollment</label>
+<label><input type="checkbox" name="application_type" value="Membership"> Membership</label>
+</div>
+
+<label>Position / Program Applied For</label>
+<input type="text" name="position">
+
+<label>How did you hear about this opportunity?</label>
+<input type="text" name="referral">
+
+<!-- QUALIFICATIONS -->
+<p class="section-title">Qualifications & Experience</p>
+
+<label>Highest Level of Education</label>
+<input type="text" name="education">
+
+<label>Relevant Skills or Experience</label>
+<textarea name="skills"></textarea>
+
+<label>Previous Employer / Institution</label>
+<input type="text" name="previous_employer">
+
+<!-- STATEMENT -->
+<p class="section-title">Personal Statement</p>
+
+<label>Why are you applying?</label>
+<textarea name="statement"></textarea>
+
+<!-- DOCUMENTS -->
+<p class="section-title">Supporting Documents</p>
+
+<div class="checkbox-group">
+<label><input type="checkbox" checked disabled> Resume / CV</label>
+<label><input type="checkbox" checked disabled> Certificates</label>
+</div>
+
+<p class="note">
+Documents will be submitted securely via WhatsApp after form submission.
+</p>
+
+<!-- DECLARATION -->
+<p class="section-title">Declaration</p>
+
+<label>
+<input type="checkbox" required>
+I confirm that all information provided is true and complete.
+</label>
+
+<!-- WHATSAPP REDIRECT -->
+<input type="hidden" name="_redirect"
+value="https://wa.me/message/2QY456QMUGI4C1">
+
+<button type="submit" class="submit-btn">
+Submit Application & Continue
+</button>
+
+</form>
+</div>
+
+<footer>
+© 2026 The Barack Obama Foundation
+</footer>
+
+</body>
+</html>

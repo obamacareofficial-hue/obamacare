@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Obama Care Center</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* Page base styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f6f1;
+            margin: 0;
+            padding: 0;
+            color: #000;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: #f8f6f1;
+            display: flex;
+            justify-content: center;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ccc;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            justify-content: space-between;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #000;
+            transition: color 0.3s ease;
+        }
+
+        nav a.donate-nav {
+            background-color: #000;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            color: #0072ce;
+        }
+
+        /* CENTER PAGE LAYOUT */
+        .center-page {
+            display: flex;
+            max-width: 1200px;
+            margin: 40px auto;
+            gap: 40px;
+            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .center-page.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .links-column {
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .links-column a {
+            display: block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #000;
+            border-bottom: 1px solid #000;
+            padding-bottom: 5px;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .links-column a:hover {
+            color: #0072ce;
+            border-color: #0072ce;
+        }
+
+        .images-column {
+            flex: 2;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .image-card {
+            flex: 1 1 45%;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-card p {
+            padding: 15px;
+            font-weight: bold;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            body{
+                display: flex;
+                flex-direction: column;
+            }
+            .images-column {
+            }
+            .image-card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <img src="https://i.pinimg.com/1200x/e9/f3/4d/e9f34d47a8864ef7bea68975295e0894.jpg"
+                 alt="Obama Care Logo"
+                 style="height: 50px; width: auto; object-fit: contain;">
+        </div>
+        <nav>
+            <a href="./center.html">The Center</a>
+            <a href="programs.html">Programs</a>
+            <a href="stories.html">Stories</a>
+            <a href="about.html">About</a>
+            <a href="./donate.html" class="donate-nav">Donate</a>
+        </nav>
+    </div>
+</header>
+
+<!-- CENTER PAGE -->
+<section class="center-page" id="centerPage">
+    <!-- LINKS COLUMN -->
+    <div class="links-column">
+        <a href="./donate.html">Donate</a>
+        <a href="index.html">Back to Homepage</a>
+        <a href="./invest.html">Invest</a>
+        <a href="https://wa.me/message/2QY456QMUGI4C1">Suggestions</a>
+    </div>
+
+    <!-- IMAGES COLUMN -->
+    <div class="images-column">
+        <div class="image-card" onclick="window.location.href='https://wa.me/message/2QY456QMUGI4C1'">
+            <img src="https://i.pinimg.com/1200x/99/f1/ea/99f1ea6e81b24d32713670bdcc8e2138.jpg" alt="Book a session">
+            <p>Book a session with us</p>
+        </div>
+        <div class="image-card" onclick="window.location.href='http://127.0.0.1:3000/job.html'">
+            <img src="https://i.pinimg.com/736x/4b/ce/69/4bce69dcc8a67e6b395b307050a7d036.jpg" alt="Apply for a job">
+            <p>Apply for a job</p>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Page load transition
+    document.addEventListener("DOMContentLoaded", () => {
+        const centerPage = document.getElementById("centerPage");
+        setTimeout(() => {
+            centerPage.classList.add("visible");
+        }, 100); // slight delay for subtle fade
+    });
+</script>
+<script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Donate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <img src="https://i.pinimg.com/1200x/e9/f3/4d/e9f34d47a8864ef7bea68975295e0894.jpg"
+                 alt="Obama Care Logo"
+                 style="height: 50px; width: auto; object-fit: contain;">
+        </div>
+        <nav>
+            <a href="./center.html">The Center</a>
+            <a href="programs.html">Programs</a>
+            <a href="stories.html">Stories</a>
+            <a href="about.html">About</a>
+            <a href="./donate.html" class="donate-nav">Donate</a>
+        </nav>
+    </div>
+</header>
+
+<section class="donate-page">
+
+    <!-- IMAGE -->
+    <div class="donate-image">
+        <img src="https://i.pinimg.com/1200x/59/28/6b/59286bda88ccd3575121611d016a5012.jpg" alt="Donation image">
+    </div>
+
+    <!-- FORM -->
+    <div class="donate-container">
+        <form id="donationForm" class="donate-card">
+
+            <p class="secure">🔒 Secure donation</p>
+
+            <!-- GIVE ONCE / MONTHLY -->
+            <div class="donation-type">
+                <button type="button" class="toggle active" data-type="One-time">
+                    Give once
+                </button>
+                <button type="button" class="toggle" data-type="Monthly">
+                    Monthly
+                </button>
+            </div>
+
+            <!-- AMOUNTS -->
+            <div class="amount-options">
+                <button type="button" class="amount-btn" data-amount="1000">$1K</button>
+                <button type="button" class="amount-btn" data-amount="2000">$2K</button>
+                <button type="button" class="amount-btn" data-amount="5000">$5K</button>
+                <button type="button" class="amount-btn" data-amount="10000">$10K</button>
+                <button type="button" class="amount-btn" data-amount="20000">$20K</button>
+                <button type="button" class="amount-btn" data-amount="50000">$50k</button>
+            </div>
+
+            <input type="number" id="amount" placeholder="Other amount (₦)" required>
+            <input type="text" id="name" placeholder="Full name" required>
+            <input type="email" id="email" placeholder="Email address (optional)">
+
+            <input type="hidden" id="frequency" value="One-time">
+
+            <button type="submit" class="donate-button">
+                Donate now
+            </button>
+
+            <p class="copy-note" id="copyNote"></p>
+
+        </form>
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 The Barack Obama Foundation</p>
+</footer>
+
+<script src="./script.js"></script>
+</body>
+</html>
